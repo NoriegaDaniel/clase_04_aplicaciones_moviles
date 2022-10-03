@@ -10,28 +10,8 @@
 </head>
 
 <body>
-  <div id="app"> {{message}}
-
-    <div style="border: 1px solid #000;" v-bind:class="!estaChequeado ? 'error': 'bien'">
-      <p>Comodín</p>
-      <div v-html="codigoHtml"></div>
-    </div>
-    <button v-show="mostrarBoton">Enviar mensaje</button>
-    <input type="checkbox" v-model="estaChequeado" />
-
-    <div class="contadorContainer">
-      <p v-if="contador > 5">El contador es mayor a cinco ([{{contador}}]</p>
-      <p v-if="contador == 5">El contador es cinco ([{{contador}}]</p>
-      <p v-if="contador < 5">El contador es menor a cinco ([{{contador}}]</p>
-    </div>
-
-
-    <div class="listaContenedor">
-      <ul>
-        <li v-for="item in listaDeElementos">Los países son: {{item.texto}} {{item.aclaracion === "Argentina" ?
-          "(Argentino)" : ""}} <br>  Código de área: {{item.codigoArea}}<hr></li>
-      </ul>
-    </div>
+  <div id="app"> 
+    
   </div>
 
 
