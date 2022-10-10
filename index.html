@@ -10,8 +10,51 @@
 </head>
 
 <body>
-  <div id="app"> 
-    
+  <div id="app"> {{message}}
+
+    <div style="border: 1px solid #000;" v-bind:class="!estaChequeado ? 'error': 'bien'">
+      <p>Comodín</p>
+      <div v-html="codigoHtml"></div>
+    </div>
+    <button v-show="mostrarBoton">Enviar mensaje</button>
+    <input type="checkbox" v-model="estaChequeado" />
+
+    <div class="contadorContainer">
+      <p v-if="contador > 5">El contador es mayor a cinco ([{{contador}}]</p>
+      <p v-if="contador == 5">El contador es cinco ([{{contador}}]</p>
+      <p v-if="contador < 5">El contador es menor a cinco ([{{contador}}]</p>
+    </div>
+
+
+    <div class="listaContenedor">
+      <ul>
+        <!-- v-if FILTRA A URUGUAY   -->
+        <li v-for="item in listaDeElementos" :key="item.id" v-if="!(item.texto === 'Uruguay')"> Los países son:   {{item.texto}} {{item.aclaracion === "Argentina" ?
+          "(Argentino)" : ""}} <br> Código de área: {{item.codigoArea}}
+          <hr>
+        </li>
+
+        <template v-for="(item, index) in listaDeElementos">
+          <li> {{index}}) Los países son: {{item.texto}} {{item.aclaracion === "Argentina" ?
+            "(Argentino)" : ""}} <br></li>
+          <li>{{index}}) Código de área: {{item.codigoArea}}
+            <hr>
+          </li>
+        </template>
+
+        <template v-for="(item, index) in listaDeElementos">
+          <p> {{index}}) Los países son: {{item.texto}} {{item.aclaracion === "Argentina" ?
+            "(Argentino)" : ""}} <br></p>
+          <p style="background: #ccc">{{index}}) Código de área: {{item.codigoArea}}
+            <hr>
+          </p>
+          <ul>
+            <li v-for= "(value, key) of item"> {{key}}: {{value}}</li>
+          </ul>
+        </template>
+      </ul>
+      
+    </div>
   </div>
 
 
