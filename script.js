@@ -4,9 +4,14 @@ var app = new Vue({
     contador: 0,
     message: 'Hola Vue',
     mostrarBoton: false,
+    email:'',
     codigoHtml: '<h1>Título de la página</h1>',
     estaChequeado: false,
     listaDeElementos: []
+    },
+    enviar: function(){
+      alert("Se está enviando");
+    }
   }
 })
 
