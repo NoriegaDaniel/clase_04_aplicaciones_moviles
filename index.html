@@ -55,8 +55,11 @@
       </ul>
     </div>
 
-    <input v-on:keyup.13="enviar" v-model="email">
-    <button @ click="mostrarTextoEnConsola">MOSTRAR TEXTO</button>
+    <input type="email" v-on:keyup.13="enviar" v-model="email">
+    <!-- <button @ click="mostrarTextoEnConsola">MOSTRAR TEXTO</button> -->
+    <button @click="agregarEmail">AGREGAR EMAIL</button>
+
+    <p>{{listaEmails}}</p>
   </div>
 
   <script src="script.js"></script>
