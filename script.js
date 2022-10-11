@@ -8,6 +8,10 @@ var app = new Vue({
     codigoHtml: '<h1>Título de la página</h1>',
     estaChequeado: false,
     listaDeElementos: []
+  },
+  methods: {
+    mostrarTextoEnConsola: function(){
+      console.log("TEXTO EN CONSOLA");
     },
     enviar: function(){
       alert("Se está enviando");
