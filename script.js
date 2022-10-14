@@ -21,6 +21,9 @@ var app = new Vue({
       this.listaEmails.push(this.email);
       this.email = "";
     },
+    eliminarEmail: function(){
+
+    },
     limpiarListaDeEmails: function(){
       this.listaEmails = [];    
     }
