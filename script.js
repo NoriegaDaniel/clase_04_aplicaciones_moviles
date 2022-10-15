@@ -4,6 +4,7 @@ var app = new Vue({
     contador: 0,
     message: 'Hola Vue',
     mostrarBoton: false,
+    listaEmails: [],
     email:'',
     codigoHtml: '<h1>Título de la página</h1>',
     estaChequeado: false,
@@ -15,6 +16,26 @@ var app = new Vue({
     },
     enviar: function(){
       alert("Se está enviando");
+    },
+    agregarEmail: function(){
+      const infoDeEmail = {
+        email: this.email,
+        check: false, 
+        show: false,
+      };
+      this.listaEmails.push(infoDeEmail);
+      this.email = "";
+    },
+    eliminarEmail: function(){
+        for(let item of this.listaEmails){
+          if(item.check) item.check = false;
+        }
+    },
+    limpiarListaDeEmails: function(){
+      this.listaEmails = [];    
+    },
+    obtenerListaVisible: function(){
+      return listaEmails.filter((item)=> item.show);
     }
   }
 })
