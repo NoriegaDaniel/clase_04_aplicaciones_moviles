@@ -18,14 +18,24 @@ var app = new Vue({
       alert("Se está enviando");
     },
     agregarEmail: function(){
-      this.listaEmails.push(this.email);
+      const infoDeEmail = {
+        email: this.email,
+        check: false, 
+        show: false,
+      };
+      this.listaEmails.push(infoDeEmail);
       this.email = "";
     },
     eliminarEmail: function(){
-
+        for(let item of this.listaEmails){
+          if(item.check) item.check = false;
+        }
     },
     limpiarListaDeEmails: function(){
       this.listaEmails = [];    
+    },
+    obtenerListaVisible: function(){
+      return listaEmails.filter((item)=> item.show);
     }
   }
 })
